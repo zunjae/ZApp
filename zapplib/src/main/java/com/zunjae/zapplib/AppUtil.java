@@ -113,4 +113,14 @@ public final class AppUtil {
             return null;
         }
     }
+
+    public static double versionNumberDouble(Context context) {
+        try {
+            PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            return Double.parseDouble(pInfo.versionName);
+        } catch (PackageManager.NameNotFoundException e) {
+            return -1;
+        }
+    }
 }
+
