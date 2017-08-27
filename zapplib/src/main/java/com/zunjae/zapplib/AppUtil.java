@@ -83,22 +83,6 @@ public final class AppUtil {
     }
 
     /**
-     * Return the version number, in double format
-     *
-     * @param context to access our package name
-     * @return our version (Example: 3.9)
-     * Will return -1 when failed
-     */
-    public static double versionNumberDouble(Context context) {
-        try {
-            PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-            return Double.parseDouble(pInfo.versionName);
-        } catch (PackageManager.NameNotFoundException e) {
-            return -1;
-        }
-    }
-
-    /**
      * Return the version number, in int format
      *
      * @param context to access our package name
@@ -108,8 +92,8 @@ public final class AppUtil {
     public static int versionNumberInt(Context context) {
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-            return Integer.parseInt(pInfo.versionName);
-        } catch (PackageManager.NameNotFoundException e) {
+            return Integer.parseInt(pInfo.versionName.replaceAll("\\.", ""));
+        } catch (Exception e) {
             return -1;
         }
     }
@@ -118,14 +102,14 @@ public final class AppUtil {
      * Return the version number, in String format
      *
      * @param context to access our package name
-     * @return our version (Example: "Version 3.9")
+     * @return our version (Example: "3.9")
      */
     @Nullable
     public static String versionNumberString(Context context) {
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             return pInfo.versionName;
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (Exception e) {
             return null;
         }
     }
