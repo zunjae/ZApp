@@ -16,7 +16,7 @@ Add the dependency:
 
 ```java
 dependencies {
-    compile 'com.github.zunjae:Zapp:0.1'
+    compile 'com.github.zunjae:Zapp:0.6'
 }
 ```
 
