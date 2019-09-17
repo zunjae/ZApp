@@ -43,6 +43,6 @@ String versionNumberString = AppUtil.versionNumberString(); // "1" | "2" | null
 
 Check https://github.com/zunjae/ZApp/blob/master/zapplib/src/androidTest/java/com/zunjae/zapplib/MainInstrumentationTest.java for example usage
 
-## LICENSE
+## License
 
-There's no license associated with this project. You may copy the code and modify it to your heart's content. You may not send me questions regarding this project. You're on your own.
+This project is available under the MIT license, though there is no need to include a license and copyright notice
